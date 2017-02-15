@@ -13,7 +13,6 @@ public class PlaceTower : MonoBehaviour
         int towerIndex = 0;
 
         //TODO: Perform tower select
-
         AudioSource audioSource = gameObject.GetComponent<AudioSource>();
         AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 
