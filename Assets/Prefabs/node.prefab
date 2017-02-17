@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4325711486956554}
   - component: {fileID: 212951974160269400}
-  - component: {fileID: 114990374897475680}
   - component: {fileID: 82469236663263234}
   - component: {fileID: 58408079869841940}
   m_Layer: 0
@@ -36,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646148742968086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -154.26678, y: 14.000106, z: -5}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -137,22 +136,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114990374897475680
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646148742968086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d761dc158fc4e4247bbf99b03d3f2946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerList:
-  - {fileID: 1391471210484950, guid: 7889978ce3dd28f45a917920a1c8d416, type: 2}
-  - {fileID: 1564834969105080, guid: 2a1f7bdfa0a897d4e8a20dd79d0b0230, type: 2}
-  - {fileID: 1234742725522254, guid: 3506b9290f1027747a6f42b6c4f8bc2e, type: 2}
-  - {fileID: 1339156545330362, guid: a30b09a74d71a924d9b29571904a7b74, type: 2}
 --- !u!212 &212951974160269400
 SpriteRenderer:
   m_ObjectHideFlags: 1

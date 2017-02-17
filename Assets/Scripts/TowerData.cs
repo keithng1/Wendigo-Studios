@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [System.Serializable]
 public class TowerLevel
 {
@@ -30,28 +31,37 @@ public class TowerData : MonoBehaviour
             currentLevel = value;
             int currentLevelIndex = levels.IndexOf(currentLevel);
 
-            GameObject levelVisualization = levels[currentLevelIndex].visualization;
-            print("here");
-            for (int i = 0; i < levels.Count; i++)
+            if (currentLevelIndex > 0)
             {
-                if (levelVisualization != null)
-                {
-                    if (i == currentLevelIndex)
-                    {
-                        levels[i].visualization.SetActive(true);
-                    }
-                    else
-                    {
-                        levels[i].visualization.SetActive(false);
-                    }
-                }
+                levels[currentLevelIndex - 1].visualization.SetActive(false);
             }
+            levels[currentLevelIndex].visualization.SetActive(true);
         }
+    }
+
+    public int getSellPrice()
+    {
+        int index = 0;
+        int currentLevelIndex = levels.IndexOf(currentLevel);
+        TowerLevel tl = levels[index];
+        int cost = tl.cost;
+        while(index!=currentLevelIndex)
+        {
+            tl = levels[index];
+            cost += tl.cost;
+            index++;
+        }
+        return cost / 2;
     }
 
     void OnEnable()
     {
-        CurrentLevel = levels[0];
+        for (int i = 0; i < levels.Count; i++)
+        {
+            levels[i].visualization.SetActive(false);
+        }
+           CurrentLevel = levels[0];
+
     }
 
     public TowerLevel getNextLevel()
@@ -82,18 +92,17 @@ public class TowerData : MonoBehaviour
         //TODO: Upgrade or Destroy tower
 
         //if chose upgrade
-        if (canUpgradeMonster())
+        if (transform.parent.name.Contains("Select"))
         {
-            increaseLevel();
-
-            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-            audioSource.PlayOneShot(audioSource.clip);
-
-            gameManager.Gold -= CurrentLevel.cost;
+            transform.parent.parent.gameObject.GetComponent<PlaceTower>().placeTower(gameObject);
+        }
+        else
+        {
+            transform.parent.gameObject.GetComponent<PlaceTower>().showUpgrade();
         }
     }
 
-    private bool canUpgradeMonster()
+    public bool canUpgradeMonster()
     {
         TowerLevel nextLevel = getNextLevel();
         if (nextLevel != null && nextLevel.cost <= gameManager.Gold)

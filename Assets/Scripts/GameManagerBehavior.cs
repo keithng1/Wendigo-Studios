@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GameManagerBehavior : MonoBehaviour {
-
+    public Text goldLabel;
+    public Text waveLabel;
     private int wave;
     private int gold;
     private int health;
@@ -33,7 +36,7 @@ public class GameManagerBehavior : MonoBehaviour {
             wave = value;
             if (!gameOver)
             {  
-                //waveLabel.text = "WAVE: " + (wave + 1);
+                waveLabel.text = "Wave: " + (wave + 1) +"/7";
             }
         }
     }
@@ -44,7 +47,7 @@ public class GameManagerBehavior : MonoBehaviour {
         set
         {
             gold = value;
-            //goldLabel.GetComponent<Text>().text = "GOLD: " + gold;
+            goldLabel.GetComponent<Text>().text = "$ " + gold;
         }
     }
 

@@ -32,7 +32,7 @@ public class TowerSelect : MonoBehaviour {
 
         Vector3 p = transform.position;
         menu = Instantiate(towerSelectMenu, new Vector3(0, 0, 0), Quaternion.identity);
-        menu.transform.GetChild(0).gameObject.transform.position = p;
+        //menu.transform.GetChild(0).gameObject.rectT= p;
     }
 
 
