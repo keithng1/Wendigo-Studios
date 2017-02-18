@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [System.Serializable]
 public class TowerLevel
@@ -116,7 +116,20 @@ public class TowerData : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+        //gameObject.GetComponent<Button>().onClick.AddListener(() => actionToMaterial());
+    }
 
+    void actionToMaterial()
+    {
+        print("wew");
+        if (transform.parent.name.Contains("Select"))
+        {
+            transform.parent.parent.gameObject.GetComponent<PlaceTower>().placeTower(gameObject);
+        }
+        else
+        {
+            transform.parent.gameObject.GetComponent<PlaceTower>().showUpgrade();
+        }
     }
 
     // Update is called once per frame
