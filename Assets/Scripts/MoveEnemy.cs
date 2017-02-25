@@ -10,6 +10,24 @@ public class MoveEnemy : MonoBehaviour {
     private float lastWaypointSwitchTime;
     public float speed = 1.0f;
 
+    private bool shocked = false;
+    private float shockTime = 0;
+    private float lastShock = 0;
+
+    public float distanceToGoal()
+    {
+        float distance = 0;
+        distance += Vector3.Distance(
+            gameObject.transform.position,
+            waypoints[currentWaypoint + 1].transform.position);
+        for (int i = currentWaypoint + 1; i < waypoints.Length - 1; i++)
+        {
+            Vector3 startPosition = waypoints[i].transform.position;
+            Vector3 endPosition = waypoints[i + 1].transform.position;
+            distance += Vector3.Distance(startPosition, endPosition);
+        }
+        return distance;
+    }
 
     private void RotateIntoMoveDirection()
     {
@@ -28,6 +46,11 @@ public class MoveEnemy : MonoBehaviour {
             Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
 
+    public void setShock(bool status)
+    {
+        if (status) lastShock = Time.time;
+        shocked = status;
+    }
 
     // Use this for initialization
     void Start () {
@@ -36,35 +59,43 @@ public class MoveEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        Vector3 startPosition = waypoints[currentWaypoint].transform.position;
-        Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
-        // 2 
-        float pathLength = Vector3.Distance(startPosition, endPosition);
-        float totalTimeForPath = pathLength / speed;
-        float currentTimeOnPath = Time.time - lastWaypointSwitchTime;
-        gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
-        // 3 
-        if (gameObject.transform.position.Equals(endPosition))
+        if (!shocked)
         {
-            if (currentWaypoint < waypoints.Length - 2)
+            Vector3 startPosition = waypoints[currentWaypoint].transform.position;
+            Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
+            // 2 
+            float pathLength = Vector3.Distance(startPosition, endPosition);
+            float totalTimeForPath = pathLength / speed;
+            float currentTimeOnPath = Time.time - lastWaypointSwitchTime - shockTime;
+            gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+            // 3 
+            if (gameObject.transform.position.Equals(endPosition))
             {
-                // 3.a 
-                currentWaypoint++;
-                lastWaypointSwitchTime = Time.time;
-                RotateIntoMoveDirection();
-            }
-            else
-            {
-                // 3.b 
-                Destroy(gameObject);
+                if (currentWaypoint < waypoints.Length - 2)
+                {
+                    // 3.a 
+                    currentWaypoint++;
+                    lastWaypointSwitchTime = Time.time;
+                    RotateIntoMoveDirection();
+                    shockTime = 0;
+                }
+                else
+                {
+                    // 3.b 
+                    Destroy(gameObject);
 
-                AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-                AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-                // TODO: deduct health
+                    AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+                    AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+                    // TODO: deduct health
+                }
             }
+
         }
-
+        else
+        {
+            shockTime += (Time.time - lastShock);
+            lastShock = Time.time;
+        }
 
 
     }

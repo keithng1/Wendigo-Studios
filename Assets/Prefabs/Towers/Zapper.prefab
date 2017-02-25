@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4354794605404730}
   - component: {fileID: 212052149416593182}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: phZapper1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,8 +37,9 @@ GameObject:
   - component: {fileID: 4593341234754994}
   - component: {fileID: 114056437993180252}
   - component: {fileID: 82445095249467142}
-  - component: {fileID: 60371873321934268}
-  m_Layer: 0
+  - component: {fileID: 58196491748302554}
+  - component: {fileID: 114279334907983458}
+  m_Layer: 2
   m_Name: Zapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4786652034727368}
   - component: {fileID: 212162918044096206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: phZapper3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4725511237505034}
   - component: {fileID: 212772161362137636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: phZapper2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +99,7 @@ Transform:
   m_GameObject: {fileID: 1339156545330362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 4354794605404730}
   - {fileID: 4725511237505034}
@@ -132,8 +133,8 @@ Transform:
   m_Father: {fileID: 4593341234754994}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60371873321934268
-PolygonCollider2D:
+--- !u!58 &58196491748302554
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -141,22 +142,11 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.32751226, y: 1.5977098}
-      - {x: 0.25509262, y: 0.71021944}
-      - {x: 0.06510925, y: 0.5968964}
-      - {x: 0.8460498, y: -0.14168906}
-      - {x: 0.5779922, y: -0.2676518}
-      - {x: 1.5355234, y: -1.5066116}
-      - {x: -0.108178616, y: -0.5470071}
-      - {x: 0.20729709, y: -0.4064188}
-      - {x: -0.8272927, y: 0.19369566}
-      - {x: -0.44859242, y: 0.38640308}
-      - {x: -1.5815172, y: 1.0213566}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!82 &82445095249467142
 AudioSource:
   m_ObjectHideFlags: 1
@@ -249,18 +239,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 10
+  - cost: 20
     visualization: {fileID: 1162889903346324}
-    bullet: {fileID: 0}
-    fireRate: 1
-  - cost: 10
+    bullet: {fileID: 1678982065947796, guid: d74451b3c2d2dc7469370edbb3a35d1c, type: 2}
+    fireRate: 5
+  - cost: 21
     visualization: {fileID: 1813604389271474}
-    bullet: {fileID: 0}
-    fireRate: 1
-  - cost: 10
+    bullet: {fileID: 1024833979289788, guid: 0ef5e41cd6830014aa60a52a37571a2c, type: 2}
+    fireRate: 5
+  - cost: 22
     visualization: {fileID: 1774394783766208}
-    bullet: {fileID: 0}
-    fireRate: 1
+    bullet: {fileID: 1216838723981660, guid: 9f34bdf6880ff5b4d9bc0ee311590bf6, type: 2}
+    fireRate: 5
+--- !u!114 &114279334907983458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339156545330362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43475b81fa9c46845a73d80a689cb6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!212 &212052149416593182
 SpriteRenderer:
   m_ObjectHideFlags: 1

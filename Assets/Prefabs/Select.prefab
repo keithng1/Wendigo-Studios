@@ -1091,7 +1091,7 @@ MonoBehaviour:
     visualization: {fileID: 1478721405887926}
     bullet: {fileID: 0}
     fireRate: 1
-  - cost: 10
+  - cost: 15
     visualization: {fileID: 1631059372683500}
     bullet: {fileID: 0}
     fireRate: 1

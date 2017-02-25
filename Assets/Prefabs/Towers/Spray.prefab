@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4623481945371228}
   - component: {fileID: 114430469877945052}
   - component: {fileID: 82058897972891118}
-  - component: {fileID: 212055908089038470}
   - component: {fileID: 95807527775159896}
-  - component: {fileID: 60809004536849436}
-  m_Layer: 0
+  - component: {fileID: 58570925047815310}
+  - component: {fileID: 114480901838088942}
+  m_Layer: 2
   m_Name: Spray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4768514746369904}
   - component: {fileID: 212312285215013402}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: phSpray1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4085000875038948}
   - component: {fileID: 212524698733387660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: phSpray3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4446337764032034}
   - component: {fileID: 212952707721141490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: phSpray2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 1234742725522254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 4768514746369904}
   - {fileID: 4446337764032034}
@@ -134,8 +134,8 @@ Transform:
   m_Father: {fileID: 4623481945371228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60809004536849436
-PolygonCollider2D:
+--- !u!58 &58570925047815310
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -143,17 +143,11 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.023971915, y: 1.5034158}
-      - {x: 0.31579375, y: -0.20638505}
-      - {x: 1.6066029, y: -1.324419}
-      - {x: 0.009109259, y: -0.79893637}
-      - {x: -1.6425617, y: -1.3364053}
-      - {x: -0.33976555, y: -0.2183711}
+  serializedVersion: 2
+  m_Radius: 7.5
 --- !u!82 &82058897972891118
 AudioSource:
   m_ObjectHideFlags: 1
@@ -263,53 +257,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 10
+  - cost: 17
     visualization: {fileID: 1391272554786612}
-    bullet: {fileID: 0}
-    fireRate: 1
-  - cost: 10
+    bullet: {fileID: 1697827099025148, guid: 9f6fad13e8494a3489eb675a49d43572, type: 2}
+    fireRate: 4
+  - cost: 18
     visualization: {fileID: 1992033620927936}
-    bullet: {fileID: 0}
-    fireRate: 1
-  - cost: 10
+    bullet: {fileID: 1259839016405200, guid: db2bfc82522a71e49bdf2faec83d826e, type: 2}
+    fireRate: 4
+  - cost: 19
     visualization: {fileID: 1639948765449514}
-    bullet: {fileID: 0}
-    fireRate: 1
---- !u!212 &212055908089038470
-SpriteRenderer:
+    bullet: {fileID: 1919380648728488, guid: e9a02a4155b036143ade7e1836966241, type: 2}
+    fireRate: 4
+--- !u!114 &114480901838088942
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234742725522254}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa794d0d5cbff834cb8aad19fbd4e02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!212 &212312285215013402
 SpriteRenderer:
   m_ObjectHideFlags: 1
