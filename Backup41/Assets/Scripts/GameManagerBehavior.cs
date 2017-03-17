@@ -11,7 +11,6 @@ public class GameManagerBehavior : MonoBehaviour {
     private int gold;
     private int health;
     public bool gameOver = false;
-    public float waveScaler;
 
     public List<GameObject> paths;
     private int finishNum;

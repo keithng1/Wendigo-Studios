@@ -7,7 +7,6 @@ public class SpawnEnemies : MonoBehaviour {
     public GameObject[] waypoints;
 
 
-
     public Wave[] waves;
     public int timeBetweenWaves = 5;
 
@@ -24,7 +23,6 @@ public class SpawnEnemies : MonoBehaviour {
         public int maxEnemies = 20;
     }
 
- 
 
     // Use this for initialization
     void Start () {
@@ -39,7 +37,6 @@ public class SpawnEnemies : MonoBehaviour {
 
         // 1
         int currentWave = gameManager.Wave;
-        print(currentWave + " " + waves.Length);
         if (currentWave < waves.Length)
         {
             // 2
@@ -54,16 +51,14 @@ public class SpawnEnemies : MonoBehaviour {
                 GameObject newEnemy = (GameObject)
                     Instantiate(waves[currentWave].enemyPrefab);
                 newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-                HealthBar hb = newEnemy.transform.FindChild("HealthBar").GetComponent<HealthBar>();
-                hb.waveScale(currentWave, gameManager.waveScaler);
-
                 enemiesSpawned++;
             }
             // 4 
             if (enemiesSpawned == waves[currentWave].maxEnemies &&
                 GameObject.FindGameObjectWithTag("Enemy") == null)
             {
-                gameManager.finish();
+                gameManager.Wave++;
+                gameManager.Gold = Mathf.RoundToInt(gameManager.Gold * 1.1f);
                 enemiesSpawned = 0;
                 lastSpawnTime = Time.time;
             }

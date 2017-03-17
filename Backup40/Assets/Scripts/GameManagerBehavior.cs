@@ -11,10 +11,6 @@ public class GameManagerBehavior : MonoBehaviour {
     private int gold;
     private int health;
     public bool gameOver = false;
-    public float waveScaler;
-
-    public List<GameObject> paths;
-    private int finishNum;
 
     public int Health
     {
@@ -55,16 +51,6 @@ public class GameManagerBehavior : MonoBehaviour {
         }
     }
 
-    public void finish()
-    {
-        finishNum++;
-        if(finishNum == paths.Count)
-        {
-            finishNum = 0;
-            Wave++;
-            Gold = Mathf.RoundToInt(Gold * 1.1f);
-        }
-    }
     // Use this for initialization
     void Start () {
 		Gold = 1000;

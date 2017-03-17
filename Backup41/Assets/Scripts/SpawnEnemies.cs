@@ -55,7 +55,7 @@ public class SpawnEnemies : MonoBehaviour {
                     Instantiate(waves[currentWave].enemyPrefab);
                 newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
                 HealthBar hb = newEnemy.transform.FindChild("HealthBar").GetComponent<HealthBar>();
-                hb.waveScale(currentWave, gameManager.waveScaler);
+                hb.waveScale(currentWave);
 
                 enemiesSpawned++;
             }

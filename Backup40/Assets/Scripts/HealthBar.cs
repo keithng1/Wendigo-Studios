@@ -9,14 +9,6 @@ public class HealthBar : MonoBehaviour {
     public float currentHealth = 100;
     private float originalScale;
 
-    public void waveScale(int wave, float scale)
-    {
-        for(int i=0; i< wave; i++)
-        {
-            maxHealth += (float)(maxHealth * scale);
-        }
-        currentHealth = maxHealth;
-    } 
 
     // Use this for initialization
     void Start()

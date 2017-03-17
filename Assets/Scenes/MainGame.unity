@@ -374,7 +374,12 @@ MonoBehaviour:
   - {fileID: 1270695852}
   - {fileID: 247193917}
   waves:
-  - enemyPrefab: {fileID: 197334, guid: 61db1e2338d4dae4991e66f90a62a275, type: 2}
+  - enemyPrefab: {fileID: 1124673567497436, guid: 42bcb582367ba704b833d0fd2b2b1b3b,
+      type: 2}
+    spawnInterval: 1
+    maxEnemies: 10
+  - enemyPrefab: {fileID: 1124673567497436, guid: 42bcb582367ba704b833d0fd2b2b1b3b,
+      type: 2}
     spawnInterval: 1
     maxEnemies: 10
   timeBetweenWaves: 5
@@ -411,9 +416,13 @@ MonoBehaviour:
   - {fileID: 133905364}
   - {fileID: 1673630411}
   waves:
-  - enemyPrefab: {fileID: 1793291592393076, guid: 500798291bfe29543b8c3ab6f425bfa2,
+  - enemyPrefab: {fileID: 1581959084463212, guid: 500798291bfe29543b8c3ab6f425bfa2,
       type: 2}
     spawnInterval: 1
+    maxEnemies: 10
+  - enemyPrefab: {fileID: 1581959084463212, guid: 500798291bfe29543b8c3ab6f425bfa2,
+      type: 2}
+    spawnInterval: 2
     maxEnemies: 10
   timeBetweenWaves: 5
 --- !u!4 &1015165214
@@ -652,6 +661,10 @@ MonoBehaviour:
   goldLabel: {fileID: 2020605185}
   waveLabel: {fileID: 1033002438}
   gameOver: 0
+  waveScaler: 0.3
+  paths:
+  - {fileID: 988877166}
+  - {fileID: 1015165212}
 --- !u!4 &1505370690
 Transform:
   m_ObjectHideFlags: 0

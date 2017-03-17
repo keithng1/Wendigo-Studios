@@ -9,11 +9,11 @@ public class HealthBar : MonoBehaviour {
     public float currentHealth = 100;
     private float originalScale;
 
-    public void waveScale(int wave, float scale)
+    public void waveScale(int wave)
     {
         for(int i=0; i< wave; i++)
         {
-            maxHealth += (float)(maxHealth * scale);
+            maxHealth += (float)(maxHealth * 0.3);
         }
         currentHealth = maxHealth;
     } 
