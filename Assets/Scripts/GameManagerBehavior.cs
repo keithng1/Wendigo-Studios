@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManagerBehavior : MonoBehaviour {
     public Text goldLabel;
     public Text waveLabel;
+	public Text healthLabel;
     private int wave;
     private int gold;
     private int health;
@@ -22,14 +23,16 @@ public class GameManagerBehavior : MonoBehaviour {
         set
         {
             health = value;
-            //healthLabel.text = "HEALTH: " + health;
+            healthLabel.text = "HEALTH: " + health;
 
             if (health <= 0 && !gameOver)
             {
                 gameOver = true;
+				Time.timeScale = 0;
             }
         }
     }
+		
 
 
     public int Wave
@@ -74,6 +77,8 @@ public class GameManagerBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+
+
 	}
 }
