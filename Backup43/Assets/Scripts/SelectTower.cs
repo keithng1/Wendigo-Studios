@@ -22,6 +22,6 @@ public class SelectTower : MonoBehaviour, IPointerClickHandler
 	
 	// Update is called once per frame
 	void Update () {
-        
-    }
+		
+	}
 }

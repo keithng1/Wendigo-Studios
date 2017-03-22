@@ -16,8 +16,7 @@ public class PlaceTower : MonoBehaviour
     }
     public void showUpgrade()
     {
-        GameObject upgrade = GameObject.Find("Upgrade").gameObject;
-        upgrade.GetComponent<UpDesBehavior>().activate(gameObject);
+        GameObject upgrade = transform.Find("Upgrade").gameObject;
         if (tower.GetComponent<TowerData>().getNextLevel() != null)
         {
             upgrade.transform.Find("Up Price").GetComponent<TextMesh>().text = "-$" + tower.GetComponent<TowerData>().getNextLevel().cost;
@@ -29,6 +28,7 @@ public class PlaceTower : MonoBehaviour
             upgrade.transform.Find("upgrade").gameObject.SetActive(false);
             upgrade.transform.Find("Up Price").gameObject.SetActive(false);
         }
+        upgrade.SetActive(true);
     }
 
     public void upgradeTower()
@@ -40,7 +40,10 @@ public class PlaceTower : MonoBehaviour
 
             tower.GetComponent<TowerData>().increaseLevel();
             gameManager.Gold -= tower.GetComponent<TowerData>().CurrentLevel.cost;
+            transform.Find("Upgrade").gameObject.SetActive(false);
+
         }
+
     }
 
 
@@ -52,7 +55,12 @@ public class PlaceTower : MonoBehaviour
         gameManager.Gold += tower.GetComponent<TowerData>().getSellPrice();
         transform.Find("Spot").gameObject.SetActive(true);
 
+        GameObject upgrade = transform.Find("Upgrade").gameObject;
+        upgrade.transform.Find("upgrade").gameObject.SetActive(true);
+        upgrade.transform.Find("Up Price").gameObject.SetActive(true);
+
         Destroy(tower);
+        upgrade.gameObject.SetActive(false);
     }
 
     void OnMouseUp()

@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class UpDesBehavior : MonoBehaviour {
 
     private GameObject node;
-    private Vector3 origpos;
     // Use this for initialization
 
     public void placeTower(GameObject obj)
@@ -35,19 +34,9 @@ public class UpDesBehavior : MonoBehaviour {
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
-        transform.position = origpos;
     }
     public void activate(GameObject nd)
     {
-        if (gameObject.name == "Select")
-        {
-            GameObject.Find("Upgrade").GetComponent<UpDesBehavior>().deactivate();
-        }
-
-        if (gameObject.name == "Upgrade")
-        {
-            GameObject.Find("Select").GetComponent<UpDesBehavior>().deactivate();
-        }
         node = nd;
         Vector3 vec = transform.position;
         vec.x = nd.transform.position.x;
@@ -60,8 +49,8 @@ public class UpDesBehavior : MonoBehaviour {
         }
     } 
     void Start () {
-        origpos = transform.position;
-    }
+		
+	}
     
 
     // Update is called once per frame

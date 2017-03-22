@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class SelectTower : MonoBehaviour, IPointerClickHandler
-{
+public class SelectTower : MonoBehaviour {
 
     public GameObject towerPrefab;
 
-    public void OnPointerClick(PointerEventData eventData)
+    void OnMouseUp()
     {
-        transform.parent.gameObject.GetComponent<UpDesBehavior>().placeTower(towerPrefab);
+         transform.parent.parent.gameObject.GetComponent<PlaceTower>().placeTower(towerPrefab);
     }
 
     // Use this for initialization
@@ -22,6 +19,6 @@ public class SelectTower : MonoBehaviour, IPointerClickHandler
 	
 	// Update is called once per frame
 	void Update () {
-        
-    }
+		
+	}
 }

@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class upgradeBehavior : MonoBehaviour {
+public class destroyBehavior : MonoBehaviour {
 
     void OnMouseUp()
     {
-        transform.parent.gameObject.GetComponent<UpDesBehavior>().upgradeTower();
+        transform.parent.parent.gameObject.GetComponent<PlaceTower>().destroyTower();
     }
-
     // Use this for initialization
     void Start () {
         
     }
 	
 	// Update is called once per frame
-	void Update ()
-    {
-        
+	void Update () {
     }
-
 }

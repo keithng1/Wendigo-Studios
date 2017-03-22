@@ -6,7 +6,7 @@ public class upgradeBehavior : MonoBehaviour {
 
     void OnMouseUp()
     {
-        transform.parent.gameObject.GetComponent<UpDesBehavior>().upgradeTower();
+        transform.parent.parent.gameObject.GetComponent<PlaceTower>().upgradeTower();
     }
 
     // Use this for initialization
