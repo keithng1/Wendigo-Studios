@@ -13,7 +13,6 @@ public class SprayBehavior : MonoBehaviour {
 
     void OnEnemyDestroy(GameObject enemy)
     {
-        print("remove");
         target.Remove(enemy);
     }
 
@@ -48,17 +47,6 @@ public class SprayBehavior : MonoBehaviour {
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManagerBehavior>();
 
-        if (target.Count > 0)
-        {
-            Vector3 direction = gameObject.transform.position - target[0].transform.position;
-            gameObject.transform.rotation = Quaternion.AngleAxis(
-                Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
-                new Vector3(0, 0, 1));
-            transform.rotation = Quaternion.AngleAxis(
-               Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
-               new Vector3(0, 0, 1));
-        }
-
     }
 
     // Update is called once per frame
@@ -67,9 +55,6 @@ public class SprayBehavior : MonoBehaviour {
 
         if (Time.time - startTime < duration)
         {
-            
-            
-
             for (int i = 0; i < target.Count; i++)
             {
                 if (target[i] != null)
@@ -81,20 +66,18 @@ public class SprayBehavior : MonoBehaviour {
                     // 4
                     if (healthBar.currentHealth <= 0)
                     {
-                        AudioSource audioSource = target[i].GetComponent<AudioSource>();
-                        AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
                         Destroy(target[i]);
+                       AudioSource audioSource = target[i].GetComponent<AudioSource>();
+                       AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 
                        gameManager.Gold += 50;
                     }
                 }
 
             }
-            
         }
         else
         {
-            
             Destroy(gameObject);
         }
     }

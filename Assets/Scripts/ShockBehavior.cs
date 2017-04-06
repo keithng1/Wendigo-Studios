@@ -13,6 +13,7 @@ public class ShockBehavior : MonoBehaviour {
 
     void OnEnemyDestroy(GameObject enemy)
     {
+        print("destroy");
         target.Remove(enemy);
     }
 

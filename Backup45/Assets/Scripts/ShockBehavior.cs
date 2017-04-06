@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SprayBehavior : MonoBehaviour {
+public class ShockBehavior : MonoBehaviour {
 
     public float duration = 2;
     public int damage;
-    public List<GameObject> target;
+    public  List<GameObject> target;
 
     private float startTime;
     private GameManagerBehavior gameManager;
 
     void OnEnemyDestroy(GameObject enemy)
     {
-        print("remove");
         target.Remove(enemy);
     }
 
@@ -42,38 +41,24 @@ public class SprayBehavior : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start()
+    void Start ()
     {
         startTime = Time.time;
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManagerBehavior>();
-
-        if (target.Count > 0)
-        {
-            Vector3 direction = gameObject.transform.position - target[0].transform.position;
-            gameObject.transform.rotation = Quaternion.AngleAxis(
-                Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
-                new Vector3(0, 0, 1));
-            transform.rotation = Quaternion.AngleAxis(
-               Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
-               new Vector3(0, 0, 1));
-        }
-
     }
 
-    // Update is called once per frame
-    void Update () {
-
+	// Update is called once per frame
+	void Update () {
+        // 1 
 
         if (Time.time - startTime < duration)
         {
-            
-            
-
             for (int i = 0; i < target.Count; i++)
             {
                 if (target[i] != null)
                 {
+                    target[i].GetComponent<MoveEnemy>().setShock(true);
                     // 3
                     Transform healthBarTransform = target[i].transform.FindChild("HealthBar");
                     HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
@@ -81,20 +66,25 @@ public class SprayBehavior : MonoBehaviour {
                     // 4
                     if (healthBar.currentHealth <= 0)
                     {
+                        Destroy(target[i]);
                         AudioSource audioSource = target[i].GetComponent<AudioSource>();
                         AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-                        Destroy(target[i]);
 
-                       gameManager.Gold += 50;
+                      gameManager.Gold += 50;
                     }
                 }
 
             }
-            
         }
         else
         {
-            
+            for (int i = 0; i < target.Count; i++)
+            {
+                if (target[i] != null)
+                {
+                    target[i].GetComponent<MoveEnemy>().setShock(false);
+                }
+            }
             Destroy(gameObject);
         }
     }
