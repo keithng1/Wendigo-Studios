@@ -15,6 +15,7 @@ public class SpawnEnemies : MonoBehaviour {
 
     private float lastSpawnTime;
     private int enemiesSpawned = 0;
+	private float waittime = 5.0f;
 
     [System.Serializable]
     public class Wave
@@ -35,6 +36,12 @@ public class SpawnEnemies : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+		if (Time.time < waittime) {
+			return;
+		}
+
 
 
         // 1
@@ -71,9 +78,7 @@ public class SpawnEnemies : MonoBehaviour {
         }
         else
         {
-            gameManager.gameOver = true;
-            GameObject gameOverText = GameObject.FindGameObjectWithTag("GameWon");
-            gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+			gameManager.victory = true;
         }
 
 

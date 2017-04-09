@@ -13,6 +13,11 @@ public class GameManagerBehavior : MonoBehaviour {
     private int health;
     public bool gameOver = false;
     public float waveScaler;
+	public bool victory = false;
+
+	public GameObject gameoverCanvas;
+	public GameObject VictoryCanvas;
+
 
     public List<GameObject> paths;
     private int finishNum;
@@ -28,8 +33,10 @@ public class GameManagerBehavior : MonoBehaviour {
             if (health <= 0 && !gameOver)
             {
                 gameOver = true;
-				Time.timeScale = 0;
-            }
+
+				gameoverCanvas.SetActive (true);
+			
+			}
         }
     }
 		
@@ -44,7 +51,8 @@ public class GameManagerBehavior : MonoBehaviour {
             if (!gameOver)
             {  
                 waveLabel.text = "Wave: " + (wave + 1) +"/7";
-            }
+			
+			}
         }
     }
 
@@ -78,6 +86,10 @@ public class GameManagerBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (!victory)
+			return;
+
+		VictoryCanvas.SetActive (true);
 
 
 	}
