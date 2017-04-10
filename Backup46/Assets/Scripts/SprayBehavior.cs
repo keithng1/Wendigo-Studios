@@ -41,8 +41,6 @@ public class SprayBehavior : MonoBehaviour {
         }
     }
 
-    
-
     // Use this for initialization
     void Start()
     {
@@ -65,8 +63,13 @@ public class SprayBehavior : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
+
         if (Time.time - startTime < duration)
         {
+            
+            
+
             for (int i = 0; i < target.Count; i++)
             {
                 if (target[i] != null)

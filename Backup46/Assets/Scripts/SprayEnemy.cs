@@ -51,7 +51,7 @@ public class SprayEnemy : MonoBehaviour {
         newBullet.transform.position = startPosition;
         SprayBehavior bulletComp = newBullet.GetComponent<SprayBehavior>();
         spray = bulletComp;
-        bulletComp.target.Add(enemiesInRange[0]);
+        bulletComp.target = enemiesInRange;
 
         // 3 
         AudioSource audioSource = gameObject.GetComponent<AudioSource>();
