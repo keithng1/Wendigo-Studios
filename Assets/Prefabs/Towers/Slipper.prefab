@@ -54,7 +54,8 @@ GameObject:
   - component: {fileID: 114868921358728608}
   - component: {fileID: 82287909785296524}
   - component: {fileID: 95649866354895190}
-  - component: {fileID: 58143979922685440}
+  - component: {fileID: 61892959458550186}
+  - component: {fileID: 114274951815994174}
   m_Layer: 2
   m_Name: Slipper
   m_TagString: Untagged
@@ -133,8 +134,8 @@ Transform:
   m_Father: {fileID: 4827015377383628}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58143979922685440
-CircleCollider2D:
+--- !u!61 &61892959458550186
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -146,7 +147,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 20
+  m_Size: {x: 2.5, y: 15}
 --- !u!82 &82287909785296524
 AudioSource:
   m_ObjectHideFlags: 1
@@ -244,6 +245,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114274951815994174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1564834969105080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a643e38207ceb2440b1b8a6a0d63a297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!114 &114868921358728608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,16 +271,16 @@ MonoBehaviour:
   levels:
   - cost: 14
     visualization: {fileID: 1483327994723640}
-    bullet: {fileID: 0}
-    fireRate: 1
+    bullet: {fileID: 1158884965158726, guid: f01ebc0621e0c844c9e5e638bef5f047, type: 2}
+    fireRate: 1.5
   - cost: 15
     visualization: {fileID: 1147715346735998}
-    bullet: {fileID: 0}
-    fireRate: 1
+    bullet: {fileID: 1625255571609378, guid: 2fa5b5523da748149be15a27805f7c70, type: 2}
+    fireRate: 1.5
   - cost: 16
     visualization: {fileID: 1625970285342552}
-    bullet: {fileID: 0}
-    fireRate: 1
+    bullet: {fileID: 1325951350184868, guid: 27ea852f409247e47b60fd3f5ae9e12c, type: 2}
+    fireRate: 1.5
 --- !u!212 &212081650570637150
 SpriteRenderer:
   m_ObjectHideFlags: 1
