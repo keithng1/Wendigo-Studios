@@ -13,7 +13,7 @@ public class MoveEnemy : MonoBehaviour {
     private bool shocked = false;
     private float shockTime = 0;
     private float lastShock = 0;
-
+	private bool isDead = false;
     public float distanceToGoal()
     {
         float distance = 0;
@@ -52,6 +52,14 @@ public class MoveEnemy : MonoBehaviour {
         shocked = status;
     }
 
+	public void setDead(bool status){
+		isDead = status;
+	}
+
+	public bool getDead(){
+		return isDead;
+	}
+
     // Use this for initialization
     void Start () {
         lastWaypointSwitchTime = Time.time;
@@ -61,47 +69,40 @@ public class MoveEnemy : MonoBehaviour {
 	void Update () {
 
 	
+		if (!isDead) {
+			if (!shocked) {
+				Vector3 startPosition = waypoints [currentWaypoint].transform.position;
+				Vector3 endPosition = waypoints [currentWaypoint + 1].transform.position;
+				// 2 
+				float pathLength = Vector3.Distance (startPosition, endPosition);
+				float totalTimeForPath = pathLength / speed;
+				float currentTimeOnPath = Time.time - lastWaypointSwitchTime - shockTime;
+				gameObject.transform.position = Vector3.Lerp (startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+				// 3 
+				if (gameObject.transform.position.Equals (endPosition)) {
+					if (currentWaypoint < waypoints.Length - 2) {
+						// 3.a 
+						currentWaypoint++;
+						lastWaypointSwitchTime = Time.time;
+						RotateIntoMoveDirection ();
+						shockTime = 0;
+					} else {
+						// 3.b 
+						Destroy (gameObject);
 
-        if (!shocked)
-        {
-            Vector3 startPosition = waypoints[currentWaypoint].transform.position;
-            Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
-            // 2 
-            float pathLength = Vector3.Distance(startPosition, endPosition);
-            float totalTimeForPath = pathLength / speed;
-            float currentTimeOnPath = Time.time - lastWaypointSwitchTime - shockTime;
-            gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
-            // 3 
-            if (gameObject.transform.position.Equals(endPosition))
-            {
-                if (currentWaypoint < waypoints.Length - 2)
-                {
-                    // 3.a 
-                    currentWaypoint++;
-                    lastWaypointSwitchTime = Time.time;
-                    RotateIntoMoveDirection();
-                    shockTime = 0;
-                }
-                else
-                {
-                    // 3.b 
-                    Destroy(gameObject);
+						AudioSource audioSource = gameObject.GetComponent<AudioSource> ();
+						AudioSource.PlayClipAtPoint (audioSource.clip, transform.position);
+						GameManagerBehavior gameManager =
+							GameObject.Find ("GameManager").GetComponent<GameManagerBehavior> ();
+						gameManager.Health -= 1;
+					}
+				}
 
-                    AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-                    AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-					GameManagerBehavior gameManager =
-						GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
-					gameManager.Health -= 1;
-                }
-            }
+			} else {
+				shockTime += (Time.time - lastShock);
+				lastShock = Time.time;
+			}
 
-        }
-        else
-        {
-            shockTime += (Time.time - lastShock);
-            lastShock = Time.time;
-        }
-
-
+		}
     }
 }

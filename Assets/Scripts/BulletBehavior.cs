@@ -12,8 +12,9 @@ public class BulletBehavior : MonoBehaviour {
 
     private float distance;
     private float startTime;
-
+	private Animator anim;
     private GameManagerBehavior gameManager;
+
 
     // Use this for initialization
     void Start () {
@@ -35,17 +36,26 @@ public class BulletBehavior : MonoBehaviour {
             if (target != null)
             {
                 // 3
+
                 Transform healthBarTransform = target.transform.FindChild("HealthBar");
+				anim = target.GetComponent<Animator> ();
                 HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
                 healthBar.currentHealth -= Mathf.Max(damage, 0);
+				MoveEnemy move = target.GetComponent<MoveEnemy> ();
                 // 4
                 if (healthBar.currentHealth <= 0)
                 {
-                    Destroy(target);
+					
+
+
+					anim.SetBool ("isDead", true);
+					move.setDead (true);
                     AudioSource audioSource = target.GetComponent<AudioSource>();
                     AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-
+					Debug.Log ("Here");
                     gameManager.Gold += 50;
+					Destroy (target,2f);
+
                 }
             }
             Destroy(gameObject);

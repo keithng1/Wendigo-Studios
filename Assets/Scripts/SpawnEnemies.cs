@@ -46,7 +46,7 @@ public class SpawnEnemies : MonoBehaviour {
 
         // 1
         int currentWave = gameManager.Wave;
-        print(currentWave + " " + waves.Length);
+       // print(currentWave + " " + waves.Length);
         if (currentWave < waves.Length)
         {
             // 2

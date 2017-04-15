@@ -40,9 +40,10 @@ public class ShootEnemy : MonoBehaviour {
 
     void Shoot(Collider2D target)
     {
+		
         GameObject bulletPrefab = towerData.CurrentLevel.bullet;
         // 1 
-        Vector3 startPosition = gameObject.transform.position;
+		Vector3 startPosition = gameObject.transform.FindChild("Bullet Spawn").transform.position;
         Vector3 targetPosition = target.transform.position;
         startPosition.z = bulletPrefab.transform.position.z;
         targetPosition.z = bulletPrefab.transform.position.z;
@@ -76,7 +77,8 @@ public class ShootEnemy : MonoBehaviour {
         foreach (GameObject enemy in enemiesInRange)
         {
             float distanceToGoal = enemy.GetComponent<MoveEnemy>().distanceToGoal();
-            if (distanceToGoal < minimalEnemyDistance)
+			bool isDead = enemy.GetComponent<MoveEnemy> ().getDead();
+			if (distanceToGoal < minimalEnemyDistance && isDead == false)
             {
                 target = enemy;
                 minimalEnemyDistance = distanceToGoal;

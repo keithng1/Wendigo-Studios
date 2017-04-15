@@ -156,9 +156,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8a82ba0473c1f394cacca7d392310eb6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 26e1a4ceba1ecb040b3993c8b7ec8ae3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -263,6 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
+  idle: {fileID: 21300000, guid: ee30df5128762ff4b8df74e233e92075, type: 3}
+  attack: {fileID: 21300004, guid: ee30df5128762ff4b8df74e233e92075, type: 3}
 --- !u!212 &212052149416593182
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -294,7 +296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 35f716249b1acef4ab7968c6aeb2109d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee30df5128762ff4b8df74e233e92075, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -329,7 +331,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e6cd32d196c6b14ca90db75af45497a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee30df5128762ff4b8df74e233e92075, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -364,7 +366,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 85cda4515e72de546adbdf3743db4670, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee30df5128762ff4b8df74e233e92075, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

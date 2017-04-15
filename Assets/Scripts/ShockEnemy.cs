@@ -10,6 +10,9 @@ public class ShockEnemy : MonoBehaviour {
 
     private bool firstShot;
     private ShockBehavior shock;
+	private SpriteRenderer[] spriteRenderers;
+	[SerializeField] private Sprite idle;
+	[SerializeField] private Sprite attack;
     // 1
     
     void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +34,12 @@ public class ShockEnemy : MonoBehaviour {
 
     void Shock()
     {
+		foreach (SpriteRenderer renderer in spriteRenderers) {
+			if (renderer.transform.parent != null) {
+				Debug.Log ("Change sprite");
+				renderer.sprite = attack;
+			}
+		}
         print("Shock");
         GameObject bulletPrefab = towerData.CurrentLevel.bullet;
         // 1 
@@ -54,14 +63,21 @@ public class ShockEnemy : MonoBehaviour {
         lastShotTime = Time.time;
         towerData = gameObject.GetComponentInChildren<TowerData>();
         firstShot = true;
+		spriteRenderers = this.transform.GetComponentsInChildren<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+		spriteRenderers = this.transform.GetComponentsInChildren<SpriteRenderer>();
         if (enemiesInRange.Count >0)
         {
             if(shock== null) { 
+				foreach (SpriteRenderer renderer in spriteRenderers) {
+					if (renderer.transform.parent != null) {
 
+						renderer.sprite = idle;
+					}
+				}
                 if (firstShot || Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
                 {
                     firstShot = false;
