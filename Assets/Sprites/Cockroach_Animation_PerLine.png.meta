@@ -1,15 +1,15 @@
 fileFormatVersion: 2
 guid: 085a1942d3d743649a2d6cd2f9419e0b
-timeCreated: 1492274154
+timeCreated: 1492284080
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Cockroach_Animation_PerLine_0
     21300002: Cockroach_Animation_PerLine_1
     21300004: Cockroach_Animation_PerLine_2
-    21300006: Cockroach_Animation_PerLine_3
-    21300008: Cockroach_Animation_PerLine_4
-    21300010: Cockroach_Animation_PerLine_5
+    21300006: Cockroach_L_Walk_2
+    21300008: Cockroach_L_Walk_0
+    21300010: Cockroach_L_Walk_1
     21300012: Cockroach_Animation_PerLine_6
     21300014: Cockroach_Animation_PerLine_7
     21300016: Cockroach_Animation_PerLine_8
@@ -88,7 +88,7 @@ TextureImporter:
         width: 511
         height: 887
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -101,7 +101,7 @@ TextureImporter:
         width: 508
         height: 885
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -114,12 +114,12 @@ TextureImporter:
         width: 516
         height: 882
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Cockroach_Animation_PerLine_3
+      name: Cockroach_L_Walk_2
       rect:
         serializedVersion: 2
         x: 2902
@@ -127,12 +127,12 @@ TextureImporter:
         width: 515
         height: 887
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Cockroach_Animation_PerLine_4
+      name: Cockroach_L_Walk_0
       rect:
         serializedVersion: 2
         x: 3797
@@ -140,12 +140,12 @@ TextureImporter:
         width: 517
         height: 887
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Cockroach_Animation_PerLine_5
+      name: Cockroach_L_Walk_1
       rect:
         serializedVersion: 2
         x: 4692
@@ -153,7 +153,7 @@ TextureImporter:
         width: 511
         height: 878
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -166,7 +166,7 @@ TextureImporter:
         width: 685
         height: 646
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -179,7 +179,7 @@ TextureImporter:
         width: 682
         height: 649
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -192,7 +192,7 @@ TextureImporter:
         width: 691
         height: 543
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -205,7 +205,7 @@ TextureImporter:
         width: 692
         height: 543
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
