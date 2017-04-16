@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 758d1e51ece7aef4aa108801ae847975
+timeCreated: 1492358224
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mosquito_Animation_PerLine_0
+    21300002: Mosquito_Animation_PerLine_1
+    21300004: Mosquito_Animation_PerLine_2
+    21300006: Mosquito_L_Walk_1
+    21300008: Mosquito_L_Walk_0
+    21300010: Mosquito_L_Walk_2
+    21300012: Mosquito_L_Death_1
+    21300014: Mosquito_Animation_PerLine_7
+    21300016: Mosquito_Animation_PerLine_8
+    21300018: Mosquito_L_Death_2
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 2000
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mosquito_Animation_PerLine_0
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1826
+        width: 729
+        height: 844
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_Animation_PerLine_1
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1824
+        width: 730
+        height: 846
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_Animation_PerLine_2
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1824
+        width: 725
+        height: 846
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_L_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 1825
+        width: 730
+        height: 845
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_L_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 3681
+        y: 1824
+        width: 729
+        height: 846
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_L_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 1824
+        width: 725
+        height: 846
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_L_Death_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 917
+        width: 606
+        height: 848
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_Animation_PerLine_7
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 917
+        width: 606
+        height: 848
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_Animation_PerLine_8
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 21
+        width: 762
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Mosquito_L_Death_2
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 25
+        width: 764
+        height: 646
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

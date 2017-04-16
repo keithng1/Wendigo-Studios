@@ -11,6 +11,10 @@ public class SwatEnemy : MonoBehaviour {
 	private bool firstShot;
 	private SwatBehavior swatt;
 
+	private SpriteRenderer renderer;
+	[SerializeField] private Sprite idle;
+	[SerializeField] private Sprite attack;
+
 	void OnEnemyDestroy(GameObject enemy)
 	{
 		print("remove");
@@ -41,6 +45,9 @@ public class SwatEnemy : MonoBehaviour {
 
 	void Swatt()
 	{
+		if (renderer.transform.parent != null) {
+			renderer.sprite = attack;
+		}
 		GameObject bulletPrefab = towerData.CurrentLevel.bullet;
 		// 1 
 		Vector3 startPosition = gameObject.transform.position;
@@ -65,6 +72,7 @@ public class SwatEnemy : MonoBehaviour {
 		lastShotTime = Time.time;
 		towerData = gameObject.GetComponentInChildren<TowerData>();
 		firstShot = true;
+		renderer = this.transform.GetComponentInChildren<SpriteRenderer>();
 	}
 
 	// Update is called once per frame
@@ -72,8 +80,12 @@ public class SwatEnemy : MonoBehaviour {
 	{
 		if (enemiesInRange.Count > 0)
 		{
+			if (renderer.transform.parent != null) {
+				renderer.sprite = idle;
+			}
 			if (swatt==null && (firstShot || Time.time - lastShotTime > towerData.CurrentLevel.fireRate))
 			{
+				
 				firstShot = false;
 				Swatt();
 				lastShotTime = Time.time;

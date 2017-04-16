@@ -74,7 +74,6 @@ public class ShockEnemy : MonoBehaviour {
             if(shock== null) { 
 				foreach (SpriteRenderer renderer in spriteRenderers) {
 					if (renderer.transform.parent != null) {
-
 						renderer.sprite = idle;
 					}
 				}

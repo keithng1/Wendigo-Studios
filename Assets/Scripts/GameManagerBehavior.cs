@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManagerBehavior : MonoBehaviour {
     public Text goldLabel;
     public Text waveLabel;
-	public Text healthLabel;
+	public TextMesh healthLabel;
     private int wave;
     private int gold;
     private int health;
@@ -28,7 +28,7 @@ public class GameManagerBehavior : MonoBehaviour {
         set
         {
             health = value;
-			healthLabel.text = health.ToString();
+			healthLabel.text = "Health:\n" +health;
 
             if (health <= 0 && !gameOver)
             {
