@@ -74,7 +74,7 @@ public class ShockBehavior : MonoBehaviour {
                         AudioSource audioSource = target[i].GetComponent<AudioSource>();
                         AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 						Destroy(target[i], 2f);
-                      	gameManager.Gold += 50;
+                      	gameManager.Gold += 30;
                     }
                 }
 

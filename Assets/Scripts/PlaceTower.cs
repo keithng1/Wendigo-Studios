@@ -71,9 +71,7 @@ public class PlaceTower : MonoBehaviour
 
     public void placeTower(GameObject obj)
     {
-		int diff = gameManager.Gold - obj.GetComponent<TowerData> ().CurrentLevel.cost;
-		Debug.Log ("Diff " + diff);
-		if(diff >= 0 ){
+		
 	        Vector3 temp = obj.transform.localScale;
 	        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
 	        audioSource.PlayOneShot(audioSource.clip);
@@ -86,7 +84,7 @@ public class PlaceTower : MonoBehaviour
 	        tower.GetComponent<TowerData>().setActive();
 	        spot.SetActive(false);
 	        //select.SetActive(false);
-		}
+
 
     }
 

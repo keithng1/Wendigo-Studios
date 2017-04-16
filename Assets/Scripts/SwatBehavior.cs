@@ -88,7 +88,7 @@ public class SwatBehavior : MonoBehaviour {
 						AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 						Destroy(target[i], 2f);
 
-						gameManager.Gold += 50;
+						gameManager.Gold += 30;
 					}
 				}
 

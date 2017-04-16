@@ -73,12 +73,12 @@ public class GameManagerBehavior : MonoBehaviour {
         {
             finishNum = 0;
             Wave++;
-            Gold = Mathf.RoundToInt(Gold * 1.1f);
+			Gold = Mathf.RoundToInt(Gold + (Gold * 0.8f));
         }
     }
     // Use this for initialization
     void Start () {
-		Gold = 1000;
+		Gold = 1500;
         Wave = 0;
         Health = 5;
 	}

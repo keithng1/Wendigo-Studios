@@ -103,7 +103,7 @@ public class MoveEnemy : MonoBehaviour {
                     anim.SetBool("isDead", true);
                     Destroy(gameObject, 2f);
 
-                    gameManager.Gold += 50;
+                    gameManager.Gold += 30;
                 }
 
                 if (Time.time - lastPoison >= 8)

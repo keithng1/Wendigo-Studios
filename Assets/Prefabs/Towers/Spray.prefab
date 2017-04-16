@@ -286,18 +286,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 200
+  - cost: 300
     visualization: {fileID: 1391272554786612}
     bullet: {fileID: 1697827099025148, guid: 9f6fad13e8494a3489eb675a49d43572, type: 2}
-    fireRate: 2
-  - cost: 200
+    fireRate: 3
+  - cost: 600
     visualization: {fileID: 1992033620927936}
     bullet: {fileID: 1259839016405200, guid: db2bfc82522a71e49bdf2faec83d826e, type: 2}
-    fireRate: 3
-  - cost: 200
+    fireRate: 2
+  - cost: 1200
     visualization: {fileID: 1639948765449514}
     bullet: {fileID: 1919380648728488, guid: e9a02a4155b036143ade7e1836966241, type: 2}
-    fireRate: 4
+    fireRate: 1
 --- !u!114 &114480901838088942
 MonoBehaviour:
   m_ObjectHideFlags: 1

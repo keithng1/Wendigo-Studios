@@ -284,11 +284,11 @@ MonoBehaviour:
     visualization: {fileID: 1056170784058578}
     bullet: {fileID: 1335601563489810, guid: 8f3de6656e622c444ada91518945487d, type: 2}
     fireRate: 1
-  - cost: 100
+  - cost: 200
     visualization: {fileID: 1583048827950456}
     bullet: {fileID: 1958369487063146, guid: 15e386b9e38f7d146be54419e1b32298, type: 2}
     fireRate: 1
-  - cost: 100
+  - cost: 400
     visualization: {fileID: 1392033481375124}
     bullet: {fileID: 1076955524059844, guid: 98f859f5d3f92904f8c03a3e1293498d, type: 2}
     fireRate: 1
