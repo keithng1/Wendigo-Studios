@@ -71,19 +71,22 @@ public class PlaceTower : MonoBehaviour
 
     public void placeTower(GameObject obj)
     {
-        Vector3 temp = obj.transform.localScale;
-        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(audioSource.clip);
-
-        GameObject spot = transform.Find("Spot").gameObject;
-        //GameObject select = transform.Find("Select").gameObject;
-        tower = (GameObject)Instantiate(obj, transform.position, Quaternion.identity);
-        tower.transform.parent = transform;
-        tower.transform.localScale = temp;
-        gameManager.Gold -= tower.GetComponent<TowerData>().CurrentLevel.cost;
-        tower.GetComponent<TowerData>().setActive();
-        spot.SetActive(false);
-        //select.SetActive(false);
+		int diff = gameManager.Gold - obj.GetComponent<TowerData> ().CurrentLevel.cost;
+		Debug.Log ("Diff " + diff);
+		if(diff >= 0 ){
+	        Vector3 temp = obj.transform.localScale;
+	        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+	        audioSource.PlayOneShot(audioSource.clip);
+	        GameObject spot = transform.Find("Spot").gameObject;
+	        //GameObject select = transform.Find("Select").gameObject;
+	        tower = (GameObject)Instantiate(obj, transform.position, Quaternion.identity);
+	        tower.transform.parent = transform;
+	        tower.transform.localScale = temp;
+	        gameManager.Gold -= tower.GetComponent<TowerData>().CurrentLevel.cost;
+	        tower.GetComponent<TowerData>().setActive();
+	        spot.SetActive(false);
+	        //select.SetActive(false);
+		}
 
     }
 

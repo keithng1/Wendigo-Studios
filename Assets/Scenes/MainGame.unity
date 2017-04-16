@@ -3862,7 +3862,7 @@ MonoBehaviour:
   waveLabel: {fileID: 1033002438}
   healthLabel: {fileID: 1922176876}
   gameOver: 0
-  waveScaler: 0.3
+  waveScaler: 0.5
   victory: 0
   gameoverCanvas: {fileID: 1588775208}
   VictoryCanvas: {fileID: 986911758}

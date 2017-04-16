@@ -93,7 +93,7 @@ public class MoveEnemy : MonoBehaviour {
             {
                 Transform healthBarTransform = transform.FindChild("HealthBar");
                 HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
-                healthBar.currentHealth -= (Time.deltaTime * Mathf.Max(8, 0));
+                healthBar.currentHealth -= (Time.deltaTime * Mathf.Max(2, 0));
                 // 4
                 if (healthBar.currentHealth <= 0)
                 {

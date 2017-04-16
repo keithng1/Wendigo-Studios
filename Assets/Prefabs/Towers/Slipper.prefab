@@ -271,15 +271,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 14
+  - cost: 100
     visualization: {fileID: 1483327994723640}
     bullet: {fileID: 1158884965158726, guid: f01ebc0621e0c844c9e5e638bef5f047, type: 2}
     fireRate: 0.7
-  - cost: 15
+  - cost: 100
     visualization: {fileID: 1147715346735998}
     bullet: {fileID: 1339991842811116, guid: e587a60594cbc4943b0119fb329edaf8, type: 2}
     fireRate: 0.5
-  - cost: 16
+  - cost: 100
     visualization: {fileID: 1625970285342552}
     bullet: {fileID: 1439342550402866, guid: 6121cd6e80762f646a9e95c26447c8f9, type: 2}
     fireRate: 0.3
