@@ -10,6 +10,9 @@ public class SprayEnemy : MonoBehaviour {
 
     private bool firstShot;
     private SprayBehavior spray;
+	private SpriteRenderer[] spriteRenderers;
+	[SerializeField] private Sprite idle;
+	[SerializeField] private Sprite attack;
 
     void OnEnemyDestroy(GameObject enemy)
     {
@@ -41,9 +44,15 @@ public class SprayEnemy : MonoBehaviour {
 
     void Spray()
     {
+		foreach (SpriteRenderer renderer in spriteRenderers) {
+			if (renderer.transform.parent != null) {
+				Debug.Log ("Change sprite");
+				renderer.sprite = attack;
+			}
+		}
         GameObject bulletPrefab = towerData.CurrentLevel.bullet;
         // 1 
-        Vector3 startPosition = gameObject.transform.position;
+		Vector3 startPosition = gameObject.transform.Find("Spray Spawn").transform.position;
         startPosition.z = bulletPrefab.transform.position.z;
 
         // 2 
@@ -65,22 +74,36 @@ public class SprayEnemy : MonoBehaviour {
         lastShotTime = Time.time;
         towerData = gameObject.GetComponentInChildren<TowerData>();
         firstShot = true;
+		spriteRenderers = this.transform.GetComponentsInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemiesInRange.Count > 0)
-        {
-            if (spray==null && (firstShot || Time.time - lastShotTime > towerData.CurrentLevel.fireRate))
-            {
-                firstShot = false;
-                Spray();
-                lastShotTime = Time.time;
-            }
-            // 3
+		spriteRenderers = this.transform.GetComponentsInChildren<SpriteRenderer>();
+		if (enemiesInRange.Count > 0) {
+			if (spray == null) {
+				foreach (SpriteRenderer renderer in spriteRenderers) {
+					if (renderer.transform.parent != null) {
+						renderer.sprite = idle;
+					}
+				}
+			}
+			if (spray == null && (firstShot || Time.time - lastShotTime > towerData.CurrentLevel.fireRate)) {
+				
+				firstShot = false;
+				Spray ();
+				lastShotTime = Time.time;
+			}
+			// 3
             
 
-        }
+		} else if (enemiesInRange.Count <= 0) {
+			foreach (SpriteRenderer renderer in spriteRenderers) {
+				if (renderer.transform.parent != null) {
+					renderer.sprite = idle;
+				}
+			}
+		}
     }
 }

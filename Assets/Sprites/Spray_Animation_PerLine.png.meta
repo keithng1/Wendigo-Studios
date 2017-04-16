@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6dcc2b4f3497d8746a663346e715d51e
-timeCreated: 1492358914
+timeCreated: 1492365181
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -81,8 +81,8 @@ TextureImporter:
         y: 900
         width: 900
         height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44082844}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -95,7 +95,7 @@ TextureImporter:
         width: 900
         height: 900
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -103,12 +103,12 @@ TextureImporter:
       name: Spray_Animation_PerLine_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
         width: 900
         height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4408284}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -120,8 +120,8 @@ TextureImporter:
         y: 0
         width: 900
         height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4408284}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
