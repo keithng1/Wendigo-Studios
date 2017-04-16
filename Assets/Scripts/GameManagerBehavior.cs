@@ -28,7 +28,7 @@ public class GameManagerBehavior : MonoBehaviour {
         set
         {
             health = value;
-            healthLabel.text = "HEALTH: " + health;
+			healthLabel.text = health.ToString();
 
             if (health <= 0 && !gameOver)
             {
