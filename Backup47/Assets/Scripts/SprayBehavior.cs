@@ -72,19 +72,18 @@ public class SprayBehavior : MonoBehaviour {
                 if (target[i] != null)
                 {
                     // 3
-                    //Transform healthBarTransform = target[i].transform.FindChild("HealthBar");
-                    //HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
-                    //healthBar.currentHealth -= Mathf.Max(damage, 0);
+                    Transform healthBarTransform = target[i].transform.FindChild("HealthBar");
+                    HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
+                    healthBar.currentHealth -= Mathf.Max(damage, 0);
                     // 4
-                    //if (healthBar.currentHealth <= 0)
-                    //{
-                    //    AudioSource audioSource = target[i].GetComponent<AudioSource>();
-                    //    AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-                    //    Destroy(target[i]);
+                    if (healthBar.currentHealth <= 0)
+                    {
+                        AudioSource audioSource = target[i].GetComponent<AudioSource>();
+                        AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+                        Destroy(target[i]);
 
-                    //   gameManager.Gold += 50;
-                    //}
-                    target[i].GetComponent<MoveEnemy>().setPoison(true);
+                       gameManager.Gold += 50;
+                    }
                 }
 
             }
