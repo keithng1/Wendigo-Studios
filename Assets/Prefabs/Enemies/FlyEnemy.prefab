@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 50910504059685784}
   - component: {fileID: 58328822455500530}
   - component: {fileID: 114517560707016552}
+  - component: {fileID: 95709803084456722}
   m_Layer: 0
   m_Name: FlyEnemy
   m_TagString: Enemy
@@ -102,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1581959084463212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400, y: -46.155415, z: 0}
+  m_LocalPosition: {x: 363.53918, y: -58.098305, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 4041698592921838}
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710350837476820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13, z: 0}
+  m_LocalPosition: {x: 0, y: 0.273, z: 0}
   m_LocalScale: {x: 0.19249988, y: 0.19999999, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4360701721759420}
@@ -131,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091441905168456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.116, y: 0.124, z: -0.099999994}
+  m_LocalPosition: {x: -0.116, y: 0.267, z: -0.099999994}
   m_LocalScale: {x: 23.840115, y: 0.18359895, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4360701721759420}
@@ -251,6 +252,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95709803084456722
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1581959084463212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1ecdd46f0fbd9848beaa2ea399be24a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95936945310042634
 Animator:
   serializedVersion: 3
@@ -336,8 +354,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.30021024, g: 0.18346854, b: 0.7941176, a: 1}
+  m_Sprite: {fileID: 21300008, guid: b055befcb8eb1ee47abd658bf0306de0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212290092868198010

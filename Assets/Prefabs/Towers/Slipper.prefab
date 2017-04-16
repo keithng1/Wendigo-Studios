@@ -272,15 +272,15 @@ MonoBehaviour:
   - cost: 14
     visualization: {fileID: 1483327994723640}
     bullet: {fileID: 1158884965158726, guid: f01ebc0621e0c844c9e5e638bef5f047, type: 2}
-    fireRate: 1.5
+    fireRate: 0.7
   - cost: 15
     visualization: {fileID: 1147715346735998}
     bullet: {fileID: 1625255571609378, guid: 2fa5b5523da748149be15a27805f7c70, type: 2}
-    fireRate: 1.5
+    fireRate: 0.5
   - cost: 16
     visualization: {fileID: 1625970285342552}
     bullet: {fileID: 1325951350184868, guid: 27ea852f409247e47b60fd3f5ae9e12c, type: 2}
-    fireRate: 1.5
+    fireRate: 0.3
 --- !u!212 &212081650570637150
 SpriteRenderer:
   m_ObjectHideFlags: 1

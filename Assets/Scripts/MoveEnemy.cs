@@ -52,6 +52,10 @@ public class MoveEnemy : MonoBehaviour {
         shocked = status;
     }
 
+	public void slowDown(){
+	
+	}
+
 	public void setDead(bool status){
 		isDead = status;
 	}

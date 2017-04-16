@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 2
-  damage: 10
+  damage: 0
   target: []
 --- !u!212 &212269144403293620
 SpriteRenderer:

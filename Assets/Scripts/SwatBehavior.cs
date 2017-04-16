@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SwatBehavior : MonoBehaviour {
 
-	public float duration = 2;
-	public int damage;
+	public float duration = 2f;
+	public float damage;
 	public List<GameObject> target;
 
 	private float startTime;
@@ -75,12 +75,16 @@ public class SwatBehavior : MonoBehaviour {
 					Transform healthBarTransform = target[i].transform.FindChild("HealthBar");
 					HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
 					healthBar.currentHealth -= Mathf.Max(damage, 0);
+					Animator anim = target [i].GetComponent<Animator> ();
+					MoveEnemy move = target [i].GetComponent<MoveEnemy> ();
 					// 4
 					if (healthBar.currentHealth <= 0)
 					{
+						anim.SetBool ("isDead", true);
+						move.setDead (true);
 						AudioSource audioSource = target[i].GetComponent<AudioSource>();
 						AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-						Destroy(target[i]);
+						Destroy(target[i], 2f);
 
 						gameManager.Gold += 50;
 					}
