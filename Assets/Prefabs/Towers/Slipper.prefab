@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564834969105080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 38.462143, y: -16.918102, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 4127231053953642}
@@ -277,11 +277,11 @@ MonoBehaviour:
     fireRate: 0.7
   - cost: 15
     visualization: {fileID: 1147715346735998}
-    bullet: {fileID: 1625255571609378, guid: 2fa5b5523da748149be15a27805f7c70, type: 2}
+    bullet: {fileID: 1339991842811116, guid: e587a60594cbc4943b0119fb329edaf8, type: 2}
     fireRate: 0.5
   - cost: 16
     visualization: {fileID: 1625970285342552}
-    bullet: {fileID: 1325951350184868, guid: 27ea852f409247e47b60fd3f5ae9e12c, type: 2}
+    bullet: {fileID: 1439342550402866, guid: 6121cd6e80762f646a9e95c26447c8f9, type: 2}
     fireRate: 0.3
 --- !u!212 &212081650570637150
 SpriteRenderer:

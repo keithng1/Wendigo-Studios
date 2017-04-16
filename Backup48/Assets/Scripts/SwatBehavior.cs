@@ -50,17 +50,15 @@ public class SwatBehavior : MonoBehaviour {
 		GameObject gm = GameObject.Find("GameManager");
 		gameManager = gm.GetComponent<GameManagerBehavior>();
 
-        print("Here: " + target.Count);
 		if (target.Count > 0)
 		{
 			Vector3 direction = gameObject.transform.position - target[0].transform.position;
-            print("DIRECTION: "+direction.y+" "+direction.x);
-            if (direction.y > 0)
-            {
-                transform.rotation = Quaternion.AngleAxis(190,
-                new Vector3(0, 0, 1));
-            }
-			
+			gameObject.transform.rotation = Quaternion.AngleAxis(
+				Mathf.Atan2(direction.y, direction.x) / Mathf.PI,
+				new Vector3(0, 0, 1));
+			transform.rotation = Quaternion.AngleAxis(
+				Mathf.Atan2(direction.y, direction.x) / Mathf.PI,
+				new Vector3(0, 0, 1));
 		}
 
 	}
