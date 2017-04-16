@@ -14,11 +14,6 @@ public class MoveEnemy : MonoBehaviour {
     private float shockTime = 0;
     private float lastShock = 0;
 	private bool isDead = false;
-
-    private float lastPoison = 0;
-    private bool poisoned = false;
-
-
     public float distanceToGoal()
     {
         float distance = 0;
@@ -51,12 +46,6 @@ public class MoveEnemy : MonoBehaviour {
             Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
 
-    public void setPoison(bool status)
-    {
-        if (status) lastPoison = Time.time;
-        poisoned = status;
-    }
-
     public void setShock(bool status)
     {
         if (status) lastShock = Time.time;
@@ -77,55 +66,22 @@ public class MoveEnemy : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        transform.position = waypoints[0].transform.position;
         lastWaypointSwitchTime = Time.time;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        GameManagerBehavior gameManager =
-            GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
-        Animator anim = gameObject.GetComponent<Animator>();
-        
+	
 		if (!isDead) {
-            if (poisoned)
-            {
-                Transform healthBarTransform = transform.FindChild("HealthBar");
-                HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
-                healthBar.currentHealth -= (Time.deltaTime * Mathf.Max(8, 0));
-                // 4
-                if (healthBar.currentHealth <= 0)
-                {
-                    AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-                    AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-                    setDead(true);
-                    anim.SetBool("isDead", true);
-                    Destroy(gameObject, 2f);
-
-                    gameManager.Gold += 50;
-                }
-
-                if (Time.time - lastPoison >= 8)
-                {
-                    poisoned = false;
-                }
-            }
-
-            if (!shocked) {
+			if (!shocked) {
 				Vector3 startPosition = waypoints [currentWaypoint].transform.position;
 				Vector3 endPosition = waypoints [currentWaypoint + 1].transform.position;
 				// 2 
-				float pathLength = Vector3.Distance (transform.position, endPosition);
-
-                float actualSpeed = speed;
-                if (poisoned)
-                {
-                    actualSpeed /= 2;
-                }
-				float totalTimeForPath = pathLength / actualSpeed;
+				float pathLength = Vector3.Distance (startPosition, endPosition);
+				float totalTimeForPath = pathLength / speed;
 				float currentTimeOnPath = Time.time - lastWaypointSwitchTime - shockTime;
-				gameObject.transform.position = Vector3.Lerp (transform.position, endPosition, Time.deltaTime / totalTimeForPath);
+				gameObject.transform.position = Vector3.Lerp (startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
 				// 3 
 				if (gameObject.transform.position.Equals (endPosition)) {
 					if (currentWaypoint < waypoints.Length - 2) {
@@ -135,11 +91,13 @@ public class MoveEnemy : MonoBehaviour {
 						RotateIntoMoveDirection ();
 						shockTime = 0;
 					} else {
-                        // 3.b 
-                        Destroy (gameObject);
+						// 3.b 
+						Destroy (gameObject);
 
 						AudioSource audioSource = gameObject.GetComponent<AudioSource> ();
 						AudioSource.PlayClipAtPoint (audioSource.clip, transform.position);
+						GameManagerBehavior gameManager =
+							GameObject.Find ("GameManager").GetComponent<GameManagerBehavior> ();
 						gameManager.Health -= 1;
 					}
 				}

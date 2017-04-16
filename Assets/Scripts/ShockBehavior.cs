@@ -63,11 +63,11 @@ public class ShockBehavior : MonoBehaviour {
                     // 3
                     Transform healthBarTransform = target[i].transform.FindChild("HealthBar");
                     HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
-                    healthBar.currentHealth -= Mathf.Max(damage, 0);
+                    healthBar.currentHealth -= (Mathf.Max(damage, 0) * Time.deltaTime);
 					Animator anim = target[i].GetComponent<Animator>();
 					MoveEnemy move = target[i].GetComponent<MoveEnemy>();
                     // 4
-                    if (healthBar.currentHealth <= 0)
+                    if (!target[i].GetComponent<MoveEnemy>().getDead() && healthBar.currentHealth <= 0)
                     {
 						anim.SetBool ("isDead", true);
 						move.setDead (true);
